@@ -1,0 +1,84 @@
+﻿@using Atelie.Core.Resources;
+
+@model Atelie.Domain.Entities.Curso
+
+<script src="~/Scripts/Atelie/Controllers/Curso/curso-index.js"></script>
+<script>
+    Atelie.Controller.Curso.UrlListar = '@Url.Action("Listar", "Curso")';
+    Atelie.Controller.Curso.UrlEditar = '@Url.Action("Editar", "Curso")';
+    Atelie.Controller.Curso.UrlSalvarCurso = '@Url.Action("SalvarCurso", "Curso")';
+    Atelie.Controller.Curso.UrlExcluirCurso = '@Url.Action("ExcluirCurso", "Curso")';
+    Atelie.Controller.Curso.UrlSwitchCursos = '@Url.Action("SwitchCursos", "Curso")';
+</script>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>@GlobalMessages.Curso</h2>
+    <div>
+        <button id="btnNovo" class="btn btn-atelie-primario" onclick="Atelie.Controller.Curso.AbrirModalNovo()">
+            <i class="fas fa-plus mr-2"></i> @GlobalMessages.IncluirCurso
+        </button>
+    </div>
+</div>
+
+<div class="card-atelie">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr id="table-header-curso">
+                <th>@GlobalMessages.Curso</th>
+                <th>@GlobalMessages.ValorMensal</th>
+                <th>@GlobalMessages.Status</th>
+                <th>@GlobalMessages.Acoes</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaDados">
+            <tr>
+                <td colspan="4" class="text-center">@GlobalMessages.LoadingCarregarDados</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="modalFormulario" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="formPrincipal">
+                <div class="modal-body">
+                    @Html.HiddenFor(model => model.Id, new { id = "formId" })
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            @Html.LabelFor(model => model.Nome, GlobalMessages.Nome)
+                            @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", id = "formNome", placeholder = "Nome do curso" })
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row align-items-end">
+                        <div class="col-md-7">
+                            <div class="form-group mb-3">
+                                @Html.LabelFor(model => model.ValorMensal, GlobalMessages.ValorMensal)
+                                @Html.TextBoxFor(model => model.ValorMensal, new { @class = "form-control", id = "formValorMensal", type = "number", step = "1.0", min = "0", placeholder = "00,00" })
+                                @Html.ValidationMessageFor(model => model.ValorMensal, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group mb-3">
+                                <div class="form-check pb-1">
+                                    @Html.CheckBoxFor(model => model.Ativo, new { @class = "form-check-input", id = "formAtivo" })
+                                    @Html.LabelFor(model => model.Ativo, GlobalMessages.AtivoPergunta, new { @class = "ms-2 form-check-label" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-atelie-primario" id="btnSalvar"><i class="fas fa-save mr-2"></i> @GlobalMessages.Salvar</button>
+                    <button type="button" class="btn btn-atelie-secundario" data-bs-dismiss="modal"><i class="fas fa-ban mr-2"></i> @GlobalMessages.Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

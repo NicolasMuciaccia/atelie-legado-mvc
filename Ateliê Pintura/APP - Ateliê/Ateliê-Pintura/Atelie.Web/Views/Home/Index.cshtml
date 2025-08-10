@@ -1,0 +1,80 @@
+﻿@using Atelie.Core.Resources
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="~/Scripts/Atelie/Controllers/Home/home-index.js"></script>
+<script>
+    Atelie.Controller.Home.UrlExportarRelatorio = '@Url.Action("ExportarRelatorio", "Home")';
+    Atelie.Controller.Home.UrlObterDadosGrafico = '@Url.Action("ObterDadosGrafico", "Home")';
+</script>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>@GlobalMessages.Home</h2>
+</div>
+
+<div class="card-atelie mb-4">
+    <div class="card-header">
+        <h5 class="title-gray">@GlobalMessages.PagamentosGrafico</h5>
+    </div>
+    <div class="card-body">
+        <canvas id="graficoPagamentos"></canvas>
+    </div>
+</div>
+
+<div class="card-atelie mb-4">
+    <form id="filtroFormulario">
+        <div class="card-header">
+            <h5 class="title-gray">@GlobalMessages.ExportarRelatorio</h5>
+        </div>
+        <div class="row align-items-end">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="anoFiltro">@GlobalMessages.Ano</label>
+                    <input type="number" id="filtroAno" name="AnoFiltro" class="form-control" value="@DateTime.Now.Year" min="2000" max="2100" />
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="filtroMes">@GlobalMessages.MesDeReferencia</label>
+                    <select id="filtroMes" name="MesFiltro" class="form-control">
+                        <option value="0">@GlobalMessages.Todos</option>
+                        <option value="1">@GlobalMessages.Janeiro</option>
+                        <option value="2">@GlobalMessages.Fevereiro</option>
+                        <option value="3">@GlobalMessages.Marco</option>
+                        <option value="4">@GlobalMessages.Abril</option>
+                        <option value="5">@GlobalMessages.Maio</option>
+                        <option value="6">@GlobalMessages.Junho</option>
+                        <option value="7">@GlobalMessages.Julho</option>
+                        <option value="8">@GlobalMessages.Agosto</option>
+                        <option value="9">@GlobalMessages.Setembro</option>
+                        <option value="10">@GlobalMessages.Outubro</option>
+                        <option value="11">@GlobalMessages.Novembro</option>
+                        <option value="12">@GlobalMessages.Dezembro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="filtroPendente">@GlobalMessages.Status</label>
+                    <select id="filtroPendente" name="PendenteFiltro" class="form-control">
+                        <option value="">@GlobalMessages.Todos</option>
+                        <option value="true">@GlobalMessages.Pendentes</option>
+                        <option value="false">@GlobalMessages.Pagos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <button id="btnExportar" type="button" class="btn btn-atelie-primario" onclick="Atelie.Controller.Home.Exportar()">
+                        <i class="fas fa-file-excel mr-2"></i> @GlobalMessages.Exportar
+                    </button>
+                    <button type="button" class="btn btn-atelie-secundario ms-1" onclick="Atelie.Controller.Home.LimparFiltro()">
+                        <i class="fas fa-times mr-2"></i> @GlobalMessages.Limpar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

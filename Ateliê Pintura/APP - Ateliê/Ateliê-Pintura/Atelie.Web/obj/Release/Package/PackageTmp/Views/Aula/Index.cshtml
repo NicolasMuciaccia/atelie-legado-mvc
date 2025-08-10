@@ -1,0 +1,149 @@
+﻿@using Atelie.Core.Resources
+
+@model Atelie.Domain.Entities.Aula
+
+<script src="~/Scripts/Atelie/Controllers/Aula/aula-index.js"></script>
+<script>
+    Atelie.Controller.Aula.UrlListar = '@Url.Action("Listar", "Aula")';
+    Atelie.Controller.Aula.UrlEditar = '@Url.Action("Editar", "Aula")';
+    Atelie.Controller.Aula.UrlSalvarAula = '@Url.Action("SalvarAula", "Aula")';
+    Atelie.Controller.Aula.UrlExcluirAula = '@Url.Action("ExcluirAula", "Aula")';
+
+    Atelie.Controller.Aula.TurmasComAlunosMap = @Html.Raw(Json.Encode(ViewBag.TurmasDictionary));
+    Atelie.Controller.Aula.AlunosOptionsCache = @Html.Raw(Json.Encode(ViewBag.AlunosSelectList));
+    Atelie.Controller.Aula.TurmaIdFiltroInicial = @Html.Raw(Json.Encode(ViewBag.TurmaIdFiltroInicial));
+</script>
+
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>@GlobalMessages.Aula</h2>
+    <div>
+        <button id="btnNovo" class="btn btn-atelie-primario" onclick="Atelie.Controller.Aula.AbrirModalNovo()">
+            <i class="fas fa-plus mr-2"></i> @GlobalMessages.IncluirAula
+        </button>
+    </div>
+</div>
+
+<div class="card-atelie mb-4">
+    <form id="filtroFormulario">
+        <div class="row align-items-end">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="formTurmaFiltro">@GlobalMessages.Turma</label>
+                    @Html.DropDownList("TurmaFiltro", ViewBag.TurmasSelectList as SelectList, "Todas as Turmas", new { @class = "form-control", id = "formTurmaFiltro" })
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="formDataFiltroDe">@GlobalMessages.De</label>
+                    <input type="date" id="formDataFiltroDe" name="DataFiltroDe" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="formDataFiltroAte">@GlobalMessages.Ate</label>
+                    <input type="date" id="formDataFiltroAte" name="DataFiltroAte" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label for="formAtivoFiltro">@GlobalMessages.Status</label>
+                    <select id="formAtivoFiltro" name="formAtivoFiltro" class="form-control">
+                        <option value="">@GlobalMessages.Todos</option>
+                        <option value="true">@GlobalMessages.Ativos</option>
+                        <option value="false">@GlobalMessages.Inativos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group text-end">
+                    <button type="submit" class="btn btn-atelie-primario" onclick="Atelie.Controller.Aula.Filtrar()">
+                        <i class="fas fa-filter mr-2"></i> @GlobalMessages.Filtrar
+                    </button>
+                    <button type="reset" class="btn btn-atelie-secundario ms-1">
+                        <i class="fas fa-times mr-2"></i> @GlobalMessages.Limpar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="card-atelie">
+    <table class="table table-hover">
+        <thead>
+            <tr id="table-header-aula">
+                <th>@GlobalMessages.Turma</th>
+                <th>@GlobalMessages.TurmaAtivaPergunta</th>
+                <th>@GlobalMessages.DataDaAula</th>
+                <th>@GlobalMessages.Presencas</th>
+                <th>@GlobalMessages.Faltas</th>
+                <th>@GlobalMessages.Acoes</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaDados">
+            <tr>
+                <td colspan="5" class="text-center">@GlobalMessages.LoadingCarregarDados</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="modalFormulario" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="formPrincipal">
+                <div class="modal-body">
+                    @Html.HiddenFor(model => model.Id, new { id = "formId" })
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group mb-3">
+                                <label for="formTurmaId">@GlobalMessages.Turma</label>
+                                @Html.DropDownList("TurmaId", ViewBag.TurmasSelectList as SelectList, "Selecione uma turma...", new { @class = "form-control", id = "formTurmaId" })
+                                <span class="text-danger" data-valmsg-for="TurmaId" id="turmaInfo"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group mb-3">
+                                <label for="formDataAula">@GlobalMessages.DataDaAula</label>
+                                <input type="date" class="form-control" id="formDataAula" />
+                                <span class="text-danger" data-valmsg-for="DataAula"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <h5 class="title-gray">@GlobalMessages.GerirAlunos</h5>
+
+                    <div class="form-group mb-3">
+                        <label for="selectAdicionarAluno">@GlobalMessages.AdicionarAluno</label>
+                        @Html.DropDownList("selectAdicionarAluno", ViewBag.AlunosSelectList as SelectList, "Selecione um aluno para adicionar...", new { @class = "form-control", id = "selectAdicionarAluno" })
+                    </div>
+
+                    <label>@GlobalMessages.AlunosMatriculados</label>
+                    <table class="table table-sm table-bordered">
+                        <tbody id="tabelaPresencas">
+                        </tbody>
+                    </table>
+                    <span class="text-danger" data-valmsg-for="TurmaId" id="modalEditarInfo"></span>
+                    <input type="hidden" name="AlunosIds" id="alunosIdsHidden" />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-atelie-primario" id="btnSalvar"><i class="fas fa-save mr-2"></i> @GlobalMessages.Salvar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-ban mr-2"></i> @GlobalMessages.Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

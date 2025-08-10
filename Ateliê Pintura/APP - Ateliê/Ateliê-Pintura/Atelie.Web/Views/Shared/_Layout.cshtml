@@ -1,0 +1,91 @@
+﻿@using Atelie.Core.Resources;
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Ateliê Osana Muciaccia</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/atelie-js")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-all-black navbar-dark">
+            <div class="container">
+                @Html.ActionLink("Ateliê Muciaccia", "Index", "Home", new { area = "" }, new { @class = "navbar-brand nav-button" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar a navegação" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link nav-button" })</li>
+                        <li>@Html.ActionLink("Turma", "Index", "Turma", new { area = "" }, new { @class = "nav-link nav-button" })</li>
+                        <li>@Html.ActionLink("Pagamento", "Index", "Pagamento", new { area = "" }, new { @class = "nav-link nav-button" })</li>
+                        <li>@Html.ActionLink("Aula", "Index", "Aula", new { area = "" }, new { @class = "nav-link nav-button" })</li>
+                        <li>@Html.ActionLink("Aluno", "Index", "Aluno", new { area = "" }, new { @class = "nav-link nav-button" })</li>
+                        <li>@Html.ActionLink("Curso", "Index", "Curso", new { area = "" }, new { @class = "nav-link nav-button" })</li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="@Url.Action("Logout", "Account")" class="nav-link nav-button" title="Deslogar">
+                                <i class="fas fa-power-off mr-2"></i> @GlobalMessages.Deslogar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container body-content">
+        @RenderBody()
+
+        <div class="modal fade" id="globalModal" tabindex="-1" role="dialog" aria-labelledby="globalModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" id="globalModalHeader">
+                        <h5 class="modal-header-text-black" id="globalModalTitle">@GlobalMessages.AvisoDoSistema</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body modal-body-text-black" id="globalModalBody">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-ban mr-2"></i> @GlobalMessages.Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirmacaoModal" tabindex="-1" role="dialog" aria-labelledby="confirmacaoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: var(--cor-fundo-pagina);" id="confirmacaoModalHeader">
+                        <h5 class="modal-title" id="confirmacaoModalTitle">@GlobalMessages.ConfirmacaoSistema</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body modal-body-text-black" id="confirmacaoModalBody">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-atelie-primario" data-bs-dismiss="modal" id="btnConfirmarAcao"><i class="fas fa-check mr-2"></i> @GlobalMessages.Confirmar</button>
+                        <button type="button" class="btn btn-atelie-secundario" data-bs-dismiss="modal"><i class="fas fa-ban mr-2"></i> @GlobalMessages.Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

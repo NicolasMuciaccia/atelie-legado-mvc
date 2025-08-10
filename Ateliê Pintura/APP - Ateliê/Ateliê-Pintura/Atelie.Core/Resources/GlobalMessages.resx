@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Dinheiro" xml:space="preserve">
+    <value>Dinheiro</value>
+  </data>
+  <data name="Domingo" xml:space="preserve">
+    <value>Domingo</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Pix" xml:space="preserve">
+    <value>Pix</value>
+  </data>
+  <data name="Quarta" xml:space="preserve">
+    <value>Quarta-Feira</value>
+  </data>
+  <data name="Quinta" xml:space="preserve">
+    <value>Quinta-Feira</value>
+  </data>
+  <data name="Segunda" xml:space="preserve">
+    <value>Segunda-Feira</value>
+  </data>
+  <data name="Sexta" xml:space="preserve">
+    <value>Sexta-Feira</value>
+  </data>
+  <data name="Credito" xml:space="preserve">
+    <value>Crédito</value>
+  </data>
+  <data name="Telefone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="Terca" xml:space="preserve">
+    <value>Terça-Feira</value>
+  </data>
+  <data name="Debito" xml:space="preserve">
+    <value>Débito</value>
+  </data>
+  <data name="Aguardando" xml:space="preserve">
+    <value>Aguardando pagamento</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="Senha" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="Entrar" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="ErroValidacao" xml:space="preserve">
+    <value>Ocorreu um erro de validação.</value>
+  </data>
+  <data name="ErrosValidacao" xml:space="preserve">
+    <value>Ocorreram um ou mais erros de validação.</value>
+  </data>
+  <data name="CampoObrigatorio" xml:space="preserve">
+    <value>O campo {0} é obrigatório.</value>
+  </data>
+  <data name="Nome" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="DescricaoContato" xml:space="preserve">
+    <value>Descrição do Contato</value>
+  </data>
+  <data name="TipoContato" xml:space="preserve">
+    <value>Tipo do Contato</value>
+  </data>
+  <data name="DiaDePagamento" xml:space="preserve">
+    <value>Dia de Pagamento</value>
+  </data>
+  <data name="NaoInformado" xml:space="preserve">
+    <value>Não Informado</value>
+  </data>
+  <data name="NomeExistente" xml:space="preserve">
+    <value>Já existe um(a) {0} cadastrado(a) com este nome.</value>
+  </data>
+  <data name="Aluno" xml:space="preserve">
+    <value>Aluno</value>
+  </data>
+  <data name="EmailInvalido" xml:space="preserve">
+    <value>O formato do e-mail fornecido é inválido.</value>
+  </data>
+  <data name="MultiplosErrors" xml:space="preserve">
+    <value>Ocorreu um ou mais erros de regra de negócio.</value>
+  </data>
+  <data name="ErroAlunoMatriculado" xml:space="preserve">
+    <value>Não é possível excluir um aluno que está matriculado em turmas.</value>
+  </data>
+  <data name="ErroAlunoComPendencias" xml:space="preserve">
+    <value>Não é possível excluir um aluno com histórico de pagamentos pendentes.</value>
+  </data>
+  <data name="ErroCursoComTurmas" xml:space="preserve">
+    <value>Não é possível excluir um curso que tenha turmas relacionadas a ele.</value>
+  </data>
+  <data name="Curso" xml:space="preserve">
+    <value>Curso</value>
+  </data>
+  <data name="ValorMensal" xml:space="preserve">
+    <value>Valor Mensal</value>
+  </data>
+  <data name="DiaDaSemana" xml:space="preserve">
+    <value>Dia Da Semana</value>
+  </data>
+  <data name="Horario" xml:space="preserve">
+    <value>Horário</value>
+  </data>
+  <data name="DataNoPassado" xml:space="preserve">
+    <value>A data da aula não pode ser no passado.</value>
+  </data>
+  <data name="ErroAulaSemTurma" xml:space="preserve">
+    <value>Uma aula deve ser associada a uma turma existente.</value>
+  </data>
+  <data name="ErroAulaComPresenca" xml:space="preserve">
+    <value>Não é possível excluir uma aula que já possui registros de presença.</value>
+  </data>
+  <data name="ErroPresencaSemAluno" xml:space="preserve">
+    <value>Um registro de presença deve ser associado a um aluno.</value>
+  </data>
+  <data name="ErroPresencaSemAula" xml:space="preserve">
+    <value>Um registro de presença deve ser associado a uma aula.</value>
+  </data>
+  <data name="ErroAlunoComPresenca" xml:space="preserve">
+    <value>Este aluno {0}  já possui um registro de presença para esta aula.</value>
+  </data>
+  <data name="ValorPagamentoInvalido" xml:space="preserve">
+    <value>O valor do pagamento deve ser maior que zero.</value>
+  </data>
+  <data name="ErroPagamentoSemAluno" xml:space="preserve">
+    <value>Um pagamento deve ser associado a um aluno existente.</value>
+  </data>
+  <data name="PagamentoPendenteEfetivacao" xml:space="preserve">
+    <value>Um pagamento pendente não pode ter uma data de efetivação.</value>
+  </data>
+  <data name="PagamentoPendenteTipoAdequado" xml:space="preserve">
+    <value>Um pagamento pendente deve ter o tipo 'Aguardando Pagamento'.</value>
+  </data>
+  <data name="PagamentoEfetivadoDataEfetivacao" xml:space="preserve">
+    <value>Um pagamento efetivado deve ter uma data de efetivação.</value>
+  </data>
+  <data name="PagamentoEfetivadoTipoPagamentoValido" xml:space="preserve">
+    <value>Um pagamento efetivado deve ter um tipo de pagamento válido (PIX, Dinheiro, etc.).</value>
+  </data>
+  <data name="PagamentoDuplicadoMes" xml:space="preserve">
+    <value>Este aluno já possui um pagamento registrado para este mês de referência.</value>
+  </data>
+  <data name="ErroExclusaoPagamentoEfetivado" xml:space="preserve">
+    <value>Não é possível excluir um pagamento que já foi efetivado.</value>
+  </data>
+  <data name="ErroTurmaMesmoHorario" xml:space="preserve">
+    <value>Já existe uma turma neste mesmo dia e com horário entre 30min antes ou depois do horário escolhido.</value>
+  </data>
+  <data name="RegistradoComSucesso" xml:space="preserve">
+    <value>O(a) {0} {1} foi registrado(a) com sucesso!</value>
+  </data>
+  <data name="ExcluidoComSucesso" xml:space="preserve">
+    <value>O registro {0} {1} foi excluido com sucesso!</value>
+  </data>
+  <data name="Turma" xml:space="preserve">
+    <value>Turma</value>
+  </data>
+  <data name="ErroInesperado" xml:space="preserve">
+    <value>Ocorreu um erro inesperado, caso persista, entre em contato com o técnico responsável.
+
+{0}</value>
+  </data>
+  <data name="Aula" xml:space="preserve">
+    <value>Aula</value>
+  </data>
+  <data name="Presenca" xml:space="preserve">
+    <value>Presença</value>
+  </data>
+  <data name="Pagamento" xml:space="preserve">
+    <value>Pagamento</value>
+  </data>
+  <data name="ErroDesativarCurso" xml:space="preserve">
+    <value>O curso não pode ser desativado pois possui turmas ativas: {0}.</value>
+  </data>
+  <data name="Fechar" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="AvisoDoSistema" xml:space="preserve">
+    <value>Aviso do Sistema</value>
+  </data>
+  <data name="UsuarioSenhaInvalido" xml:space="preserve">
+    <value>Usuário ou senha inválidos.</value>
+  </data>
+  <data name="Deslogar" xml:space="preserve">
+    <value>Deslogar</value>
+  </data>
+  <data name="BemVindoAoAtelie" xml:space="preserve">
+    <value>Bem-vindo ao Ateliê Osana Muciaccia!</value>
+  </data>
+  <data name="Limpar" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="FacaLogin" xml:space="preserve">
+    <value>Faça seu login!</value>
+  </data>
+  <data name="IncluirCurso" xml:space="preserve">
+    <value>Incluir Curso</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="AtivoPergunta" xml:space="preserve">
+    <value>Ativo?</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Salvar" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="AlteradoComSucesso" xml:space="preserve">
+    <value>O registro {0} {1} foi alterado com sucesso!</value>
+  </data>
+  <data name="Cursos" xml:space="preserve">
+    <value>Cursos</value>
+  </data>
+  <data name="Confirmar" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="ConfirmacaoSistema" xml:space="preserve">
+    <value>Confirme para prosseguir a ação!</value>
+  </data>
+  <data name="IncluirAluno" xml:space="preserve">
+    <value>Incluir Aluno</value>
+  </data>
+  <data name="PresencaMensal" xml:space="preserve">
+    <value>Presença Mensal</value>
+  </data>
+  <data name="LoadingCarregarDados" xml:space="preserve">
+    <value>A carregar dados...</value>
+  </data>
+  <data name="DiaPagamentoPreferencial" xml:space="preserve">
+    <value>Dia de Pagamento Preferencial</value>
+  </data>
+  <data name="Filtrar" xml:space="preserve">
+    <value>Filtrar</value>
+  </data>
+  <data name="Todos" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="Ativos" xml:space="preserve">
+    <value>Ativos</value>
+  </data>
+  <data name="Inativos" xml:space="preserve">
+    <value>Inativos</value>
+  </data>
+  <data name="MesDePresencaFiltro" xml:space="preserve">
+    <value>Mês das Presenças</value>
+  </data>
+  <data name="Selecione" xml:space="preserve">
+    <value>Selecione</value>
+  </data>
+  <data name="Janeiro" xml:space="preserve">
+    <value>Janeiro</value>
+  </data>
+  <data name="Fevereiro" xml:space="preserve">
+    <value>Fevereiro</value>
+  </data>
+  <data name="Marco" xml:space="preserve">
+    <value>Março</value>
+  </data>
+  <data name="Abril" xml:space="preserve">
+    <value>Abril</value>
+  </data>
+  <data name="Maio" xml:space="preserve">
+    <value>Maio</value>
+  </data>
+  <data name="Junho" xml:space="preserve">
+    <value>Junho</value>
+  </data>
+  <data name="Julho" xml:space="preserve">
+    <value>Julho</value>
+  </data>
+  <data name="Agosto" xml:space="preserve">
+    <value>Agosto</value>
+  </data>
+  <data name="Setembro" xml:space="preserve">
+    <value>Setembro</value>
+  </data>
+  <data name="Outubro" xml:space="preserve">
+    <value>Outubro</value>
+  </data>
+  <data name="Novembro" xml:space="preserve">
+    <value>Novembro</value>
+  </data>
+  <data name="Dezembro" xml:space="preserve">
+    <value>Dezembro</value>
+  </data>
+  <data name="DiaPagamentoInvalido" xml:space="preserve">
+    <value>O campo Dia de Pagamento deve receber um valor entre 1 e 31.</value>
+  </data>
+  <data name="IncluirPagamento" xml:space="preserve">
+    <value>Incluir Pagamento</value>
+  </data>
+  <data name="DataReferencia" xml:space="preserve">
+    <value>Data Referência</value>
+  </data>
+  <data name="DataEfetivacao" xml:space="preserve">
+    <value>Data Efetivação</value>
+  </data>
+  <data name="Valor" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="TipoPagamento" xml:space="preserve">
+    <value>Tipo Pagamento</value>
+  </data>
+  <data name="PendentePergunta" xml:space="preserve">
+    <value>Pendente?</value>
+  </data>
+  <data name="TurmaReferente" xml:space="preserve">
+    <value>Referente à Turma</value>
+  </data>
+  <data name="Pendentes" xml:space="preserve">
+    <value>Pendentes</value>
+  </data>
+  <data name="NaoPendentes" xml:space="preserve">
+    <value>Não Pendentes</value>
+  </data>
+  <data name="Ano" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="MesDeReferencia" xml:space="preserve">
+    <value>Mês de Referência</value>
+  </data>
+  <data name="Efetivacao" xml:space="preserve">
+    <value>Efetivação</value>
+  </data>
+  <data name="Referencia" xml:space="preserve">
+    <value>Referência</value>
+  </data>
+  <data name="IncluirTurma" xml:space="preserve">
+    <value>Incluir Turma</value>
+  </data>
+  <data name="Sabado" xml:space="preserve">
+    <value>Sábado</value>
+  </data>
+  <data name="TotalAlunos" xml:space="preserve">
+    <value>Total de Alunos</value>
+  </data>
+  <data name="AlunosMatriculados" xml:space="preserve">
+    <value>Alunos Matriculados</value>
+  </data>
+  <data name="GerirAlunos" xml:space="preserve">
+    <value>Gerir Alunos  da Turma</value>
+  </data>
+  <data name="IncluirAula" xml:space="preserve">
+    <value>Incluir Aula</value>
+  </data>
+  <data name="DataDaAula" xml:space="preserve">
+    <value>Data da Aula</value>
+  </data>
+  <data name="Presencas" xml:space="preserve">
+    <value>Presenças</value>
+  </data>
+  <data name="Faltas" xml:space="preserve">
+    <value>Faltas</value>
+  </data>
+  <data name="ListaPresenca" xml:space="preserve">
+    <value>Lista de Presença</value>
+  </data>
+  <data name="Alunos" xml:space="preserve">
+    <value>Alunos</value>
+  </data>
+  <data name="PresentePergunta" xml:space="preserve">
+    <value>Presente?</value>
+  </data>
+  <data name="ErroAulaSemPresenca" xml:space="preserve">
+    <value>Para salvar uma aula, deve conter pelo menos um aluno na lista de presença.</value>
+  </data>
+  <data name="Celular" xml:space="preserve">
+    <value>Celular</value>
+  </data>
+  <data name="TurmaAtivaPergunta" xml:space="preserve">
+    <value>Turma Ativa?</value>
+  </data>
+  <data name="ErroCursoInativo" xml:space="preserve">
+    <value>Não foi possível concluir essa ação pois o curso está inativo.</value>
+  </data>
+  <data name="ErroAlunoComNomeExistente" xml:space="preserve">
+    <value>Já existe um aluno com esse mesmo nome.</value>
+  </data>
+  <data name="Acoes" xml:space="preserve">
+    <value>Ações</value>
+  </data>
+  <data name="AdicionarAluno" xml:space="preserve">
+    <value>Adicionar Aluno</value>
+  </data>
+  <data name="ErroTurmaInativaComAluno" xml:space="preserve">
+    <value>A turma não pode ser inativa caso possua alunos nela.</value>
+  </data>
+  <data name="De" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="Ate" xml:space="preserve">
+    <value>Até</value>
+  </data>
+  <data name="Pagos" xml:space="preserve">
+    <value>Pagos</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ExportarRelatorio" xml:space="preserve">
+    <value>Exportar Relatório</value>
+  </data>
+  <data name="PagamentosGrafico" xml:space="preserve">
+    <value>Pagamentos Pendentes/Pagos</value>
+  </data>
+  <data name="Exportar" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+</root>
