@@ -1,0 +1,33 @@
+# Build
+bin/
+obj/
+out/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.rsuser
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# NuGet
+*.nupkg
+packages/
+
+# Node (se tiver front)
+node_modules/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# OS
+.DS_Store
+Thumbs.db
